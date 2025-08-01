@@ -1,0 +1,20 @@
+
+Farmers Saver (Personal IoT/Image-Detection Project)
+Farmers Saver (Personal IoT/Image-Detection Project)
+Mar 2019 - PresentMar 2019 - Present
+Tech: Python, OpenCV/TensorFlow Lite, NVIDIA Jetson Nano, Linux Bash, USB Camera, PyAudio
+
+Designed an edge-AI system on Jetson Nano to detect pigeons raiding livestock feed and automatically scare them away with an audio alarm.
+
+
+- Built a real-time pigeon-detection pipeline in Python using OpenCV / TensorFlow Lite. Trained a lightweight model that runs at 10 fps on Jetson Nano with < 5 % false-positive rate in farm conditions.
+
+- Integrated a USB camera and Linux-based scripts to capture video frames, run inference, and trigger a loudspeaker alert within 200 ms of detection.
+
+** Developed automated audio alarm** (Python + PyAudio) that plays custom repellent sounds whenever the model detects pigeons within the camera’s field of view.
+
+- Deployed on a small-scale farm: has maintained ≥ 95 % uptime over six months of field testing, reducing feed loss by over 60 % during peak bird season.
+
+- Ongoing improvements: Currently refining model robustness (adding nighttime IR detection) and optimizing power consumption (switching to sleep mode when idle).
+Tech: Python, OpenCV/TensorFlow Lite, NVIDIA Jetson Nano, Linux Bash, USB Camera, PyAudio Designed an edge-AI system on Jetson Nano to detect pigeons raiding livestock feed and automatically scare them away with an audio alarm. - Built a real-time pigeon-detection pipeline in Python using OpenCV / TensorFlow Lite. Trained a lightweight model that runs at 10 fps on Jetson Nano with < 5 % false-positive rate in farm conditions. - Integrated a USB camera and Linux-based scripts to capture video frames, run inference, and trigger a loudspeaker alert within 200 ms of detection. ** Developed automated audio alarm** (Python + PyAudio) that plays custom repellent sounds whenever the model detects pigeons within the camera’s field of view. - Deployed on a small-scale farm: has maintained ≥ 95 % uptime over six months of field testing, reducing feed loss by over 60 % during peak bird season. - Ongoing improvements: Currently refining model robustness (adding nighttime IR detection) and optimizing power consumption (switching to sleep mode when idle).
+Skills: Linux
