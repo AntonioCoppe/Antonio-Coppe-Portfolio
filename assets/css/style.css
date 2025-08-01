@@ -750,7 +750,9 @@ main {
 
 .clients-item img {
   width: 100%;
-  filter: grayscale(1);
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(0.5);
   transition: var(--transition-1);
 }
 
