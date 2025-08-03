@@ -1,0 +1,69 @@
+/*-----------------------------------*\
+  #theme.css
+  Light theme overrides
+\*-----------------------------------*/
+
+[data-theme="light"] {
+  /* Background gradients */
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 100%) 3%,
+    hsl(0, 0%, 95%) 97%
+  );
+  --bg-gradient-jet: linear-gradient(
+    to bottom right,
+    hsla(0, 0%, 100%, 0.251) 0%,
+    hsla(0, 0%, 100%, 0) 100%
+  ), hsl(0, 0%, 100%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 80%) 0%,
+    hsla(0, 0%, 80%, 0) 50%
+  );
+
+  /* Solid colors */
+  --jet: hsl(0, 0%, 80%);
+  --onyx: hsl(240, 1%, 85%);
+  --eerie-black-1: hsl(0, 0%, 96%);
+  --eerie-black-2: hsl(0, 0%, 98%);
+  --smoky-black: hsl(0, 0%, 100%);
+  --white-1: hsl(0, 0%, 20%);
+  --white-2: hsl(0, 0%, 10%);
+  --light-gray: hsl(0, 0%, 50%);
+  --light-gray-70: hsla(0, 0%, 50%, 0.7);
+
+/* Navbar overrides */
+}
+
+[data-theme="light"] .navbar {
+  background: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: blur(10px);
+  border-color: var(--jet);
+}
+
+[data-theme="light"] .navbar-link {
+  color: var(--white-1);
+}
+
+[data-theme="light"] .navbar-link:hover,
+[data-theme="light"] .navbar-link:focus {
+  color: var(--white-2);
+}
+
+/* Improve icon visibility */
+[data-theme="light"] .icon-box {
+  color: var(--vegas-gold);
+}
+
+[data-theme="light"] .icon-box::before {
+  background: hsl(0, 0%, 90%);
+}
+
+/* Theme toggle icon size & color */
+#theme-toggle-icon {
+  font-size: 20px;
+}
+
+[data-theme="light"] #theme-toggle-icon {
+  color: var(--vegas-gold);
+}

@@ -1,5 +1,33 @@
 'use strict';
 
+// Theme toggle functionality
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeToggleIcon = document.getElementById('theme-toggle-icon');
+
+if (themeToggleBtn) {
+  const setTheme = (theme) => {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeToggleIcon.setAttribute('name', 'sunny-outline');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      themeToggleIcon.setAttribute('name', 'moon-outline');
+    }
+    localStorage.setItem('theme', theme);
+  };
+
+  // Initialize theme from localStorage
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  setTheme(savedTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+  });
+}
+
+
 
 
 // element toggle function
