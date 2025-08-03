@@ -33,6 +33,8 @@ Antonio Coppe is a Software Engineer with 2+ years of experience specializing in
 - Modern CSS Grid and Flexbox
 - Ion Icons for UI elements
 
+---
+
 ## Getting Started
 
 1. Clone or download the repository
