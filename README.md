@@ -5,6 +5,7 @@ A modern, responsive personal portfolio website showcasing Antonio Coppe's work 
 ## About
 
 Antonio Coppe is a Software Engineer with 2+ years of experience specializing in:
+
 - **Backend Development**: High-performance microservices and APIs using C#, Python, and Java
 - **Full-Stack Development**: Complete web applications with React, Next.js, and modern JavaScript
 - **Cloud Infrastructure**: AWS deployment with ECS, ECR, Terraform, and Docker
@@ -40,7 +41,7 @@ Antonio Coppe is a Software Engineer with 2+ years of experience specializing in
 
 ## Contact
 
-- **Email**: antonio.coppe@gmail.com
+- **Email**: <antonio.coppe@gmail.com>
 - **Phone**: +1 (437) 898-8542
 - **Location**: Toronto, Ontario, Canada
 - **LinkedIn**: [antonio-coppe](https://linkedin.com/in/antonio-coppe)
