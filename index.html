@@ -154,21 +154,21 @@
               </div>
             </div>
             <div class="hero-cta">
-              <a href="mailto:antonio.coppe@gmail.com" class="cta-button primary">
+              <a href="mailto:antonio.coppe@gmail.com" class="cta-button primary" title="Get In Touch" aria-label="Get In Touch">
                 <ion-icon name="mail-outline"></ion-icon>
-                Get In Touch
+                <span class="cta-text">Get In Touch</span>
               </a>
-              <a href="https://linkedin.com/in/antonio-coppe" class="cta-button secondary" target="_blank">
+              <a href="https://linkedin.com/in/antonio-coppe" class="cta-button secondary" target="_blank" title="LinkedIn" aria-label="LinkedIn">
                 <ion-icon name="logo-linkedin"></ion-icon>
-                LinkedIn
+                <span class="cta-text">LinkedIn</span>
               </a>
-              <a href="https://github.com/AntonioCoppe" class="cta-button secondary" target="_blank">
+              <a href="https://github.com/AntonioCoppe" class="cta-button secondary" target="_blank" title="GitHub" aria-label="GitHub">
                 <ion-icon name="logo-github"></ion-icon>
-                GitHub
+                <span class="cta-text">GitHub</span>
               </a>
-              <a href="#" class="cta-button secondary resume-btn">
+              <a href="#" class="cta-button secondary resume-btn" title="Resume" aria-label="Resume">
                 <ion-icon name="document-outline"></ion-icon>
-                Resume
+                <span class="cta-text">Resume</span>
               </a>
             </div>
           </div>
@@ -541,152 +541,315 @@
         </section>
       </article>
       <article class="portfolio" data-page="portfolio">
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-        <section class="projects">
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>DevOps</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Full-Stack</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Mobile Development</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Game Development</button>
-            </li>
-          </ul>
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-            <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item>All</button>
+        <!-- Portfolio Header -->
+        <header class="portfolio-header">
+          <div class="portfolio-title-section">
+            <h2 class="h2 portfolio-main-title">Selected Projects</h2>
+            <p class="portfolio-subtitle">
+              Production systems and research projects — with proven impact in AI, games, cloud, and full-stack development.
+            </p>
+          </div>
+          
+          <!-- Category Filters -->
+          <div class="portfolio-filters" role="tablist" aria-label="Portfolio category filters">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="filter-btn active" data-filter-btn role="tab" aria-selected="true" aria-controls="portfolio-items" aria-label="Show all portfolio items">All</button>
               </li>
-              <li class="select-item">
-                <button data-select-item>DevOps</button>
+              <li class="filter-item">
+                <button class="filter-btn" data-filter-btn role="tab" aria-selected="false" aria-controls="portfolio-items" aria-label="Show full-stack development projects">Full-Stack</button>
               </li>
-              <li class="select-item">
-                <button data-select-item>Full-Stack</button>
+              <li class="filter-item">
+                <button class="filter-btn" data-filter-btn role="tab" aria-selected="false" aria-controls="portfolio-items" aria-label="Show cloud and DevOps projects">Cloud/DevOps</button>
               </li>
-              <li class="select-item">
-                <button data-select-item>Mobile Development</button>
+              <li class="filter-item">
+                <button class="filter-btn" data-filter-btn role="tab" aria-selected="false" aria-controls="portfolio-items" aria-label="Show AI and machine learning projects">AI</button>
               </li>
-              <li class="select-item">
-                <button data-select-item>IoT</button>
+              <li class="filter-item">
+                <button class="filter-btn" data-filter-btn role="tab" aria-selected="false" aria-controls="portfolio-items" aria-label="Show game development projects">Games</button>
               </li>
-              <li class="select-item">
-                <button data-select-item>Game Development</button>
+              <li class="filter-item">
+                <button class="filter-btn" data-filter-btn role="tab" aria-selected="false" aria-controls="portfolio-items" aria-label="Show research projects">Research</button>
               </li>
             </ul>
-          </div>
-          <ul class="project-list">
-            <li class="project-item  active" data-filter-item data-category="full-stack">
-              <a href="https://github.com/AntonioCoppe/notion-template-shop" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./attached_assets/1752864756927_1754059044440.png" alt="notion template shop" loading="lazy">
-                </figure>
-                <h3 class="project-title">Notion Template Shop</h3>
-                <p class="project-category">Full-Stack</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="devops">
-              <a href="#" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./attached_assets/FinalPipeline_1754059175635.png" alt="system engineering ci/cd pipeline" loading="lazy">
-                </figure>
-                <h3 class="project-title">CI/CD Pipeline System</h3>
-                <p class="project-category">DevOps</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="full-stack">
-              <a href="https://riva-dei-coz.vercel.app/" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./attached_assets/Screenshot 2025-08-01 at 10.41.05_1754059269791.png" alt="riva dei coz agriturismo booking platform" loading="lazy">
-                </figure>
-                <h3 class="project-title">Riva dei Coz Booking Platform</h3>
-                <p class="project-category">Full-Stack</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="full-stack">
-              <a href="https://electro-quote-pro-v2.vercel.app/" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./attached_assets/Screenshot 2025-08-01 at 10.45.06_1754059509711.png" alt="electro quote pro v2 electrical project quoting platform" loading="lazy">
-                </figure>
-                <h3 class="project-title">ElectroQuotePro V2</h3>
-                <p class="project-category">Full-Stack</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="iot">
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
+            
+            <!-- Mobile Filter Dropdown -->
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>All Projects</div>
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
                 </div>
-                <img src="./attached_assets/farmers-saver-iot-preview.svg" alt="farmers saver iot pigeon detection system" loading="lazy">
-              </figure>
-              <h3 class="project-title">Farmers Saver IoT</h3>
-              <p class="project-category">IoT / AI</p>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="full-stack">
-              <a href="https://github.com/AntonioCoppe/311-insight-dashboard" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+              </button>
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Full-Stack</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Cloud/DevOps</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>AI</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Games</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Research</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <!-- Projects Grid -->
+        <section class="projects-section">
+          <div class="project-grid" id="portfolio-items">
+            
+            <!-- ElectroQuote Pro V2 - Full-Stack Production -->
+            <div class="project-card active" data-filter-item data-category="full-stack" data-project="electroquote">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/Screenshot 2025-08-01 at 10.45.06_1754059509711.png" alt="ElectroQuote Pro V2 Dashboard" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="electroquote">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
                   </div>
-                  <img src="./attached_assets/Screenshot 2025-08-01 at 10.54.27_1754060071300.png" alt="311 insight dashboard for toronto service requests" loading="lazy">
-                </figure>
-                <h3 class="project-title">311 Insight Dashboard</h3>
-                <p class="project-category">Full-Stack</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="game development">
-              <a href="https://store.steampowered.com/app/2385970/Kardashev/" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <div class="project-status-badge production">In Production</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">ElectroQuote Pro V2</h3>
+                    <span class="project-category-tag full-stack">Full-Stack</span>
                   </div>
-                  <img src="./attached_assets/Screenshot 2025-08-01 at 14.04.05_1754071447711.png" alt="kardashev space procedural factory building game" loading="lazy">
-                </figure>
-                <h3 class="project-title">Kardashev</h3>
-                <p class="project-category">Game Development</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="mobile development">
-              <a href="https://github.com/AntonioCoppe/rubiks-vision" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <p class="project-impact">Real-time electrical pricing platform with web scraping — delivering instant quotes to contractors</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Scraping</span>
                   </div>
-                  <img src="./attached_assets/rubiks-vision-preview.svg" alt="rubiks vision mobile app computer vision cube solver" loading="lazy">
-                </figure>
-                <h3 class="project-title">Rubik's Vision</h3>
-                <p class="project-category">Mobile Development</p>
-              </a>
-            </li>
-          </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- CI/CD Pipeline - Cloud/DevOps -->
+            <div class="project-card active" data-filter-item data-category="cloud/devops" data-project="cicd">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/FinalPipeline_1754059175635.png" alt="CI/CD Pipeline Architecture" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="cicd">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge production">Production Ready</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">CI/CD Pipeline System</h3>
+                    <span class="project-category-tag cloud">Cloud/DevOps</span>
+                  </div>
+                  <p class="project-impact">Automated deployment pipeline with Docker + GitHub Actions — zero-downtime deployments for microservices</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">GitHub Actions</span>
+                    <span class="tech-badge">AWS ECS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Riva dei Coz - Full-Stack Production -->
+            <div class="project-card active" data-filter-item data-category="full-stack" data-project="rivadeicoz">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/Screenshot 2025-08-01 at 10.41.05_1754059269791.png" alt="Riva dei Coz Booking Platform" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="rivadeicoz">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge production">In Production</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">Riva dei Coz Booking Platform</h3>
+                    <span class="project-category-tag full-stack">Full-Stack</span>
+                  </div>
+                  <p class="project-impact">Booking platform with Stripe + Supabase syncing to Booking.com — reduced manual workload by 60%</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Supabase</span>
+                    <span class="tech-badge">Stripe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Farmers Saver IoT - AI -->
+            <div class="project-card active" data-filter-item data-category="ai" data-project="farmersaver">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/farmers-saver-iot-preview.svg" alt="Farmers Saver IoT System" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="farmersaver">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge prototype">Prototype</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">Farmers Saver IoT</h3>
+                    <span class="project-category-tag ai">AI</span>
+                  </div>
+                  <p class="project-impact">AI-powered pigeon detection system with IoT sensors — preventing crop damage through intelligent monitoring</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Computer Vision</span>
+                    <span class="tech-badge">IoT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 311 Insight Dashboard - Full-Stack -->
+            <div class="project-card active" data-filter-item data-category="full-stack" data-project="insight311">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/Screenshot 2025-08-01 at 10.54.27_1754060071300.png" alt="311 Insight Dashboard" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="insight311">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge demo">Demo</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">311 Insight Dashboard</h3>
+                    <span class="project-category-tag full-stack">Full-Stack</span>
+                  </div>
+                  <p class="project-impact">Data visualization platform for Toronto's 311 service requests — insights from 500k+ municipal records</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">D3.js</span>
+                    <span class="tech-badge">APIs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Research Project -->
+            <div class="project-card active" data-filter-item data-category="research" data-project="research">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <div class="research-placeholder">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                    <span>Research Publication</span>
+                  </div>
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="research">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge published">Published</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">Hypothesis Engineering Research</h3>
+                    <span class="project-category-tag research">Research</span>
+                  </div>
+                  <p class="project-impact">Published research on managing architectural uncertainties — contributing to software engineering methodology</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Software Architecture</span>
+                    <span class="tech-badge">Research</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kardashev - Games -->
+            <div class="project-card active" data-filter-item data-category="games" data-project="kardashev">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/Screenshot 2025-08-01 at 14.04.05_1754071447711.png" alt="Kardashev Game" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="kardashev">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge production">In Production</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">Kardashev</h3>
+                    <span class="project-category-tag games">Games</span>
+                  </div>
+                  <p class="project-impact">Space factory-building game on Steam — demonstrating advanced C# performance optimization and complex systems</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">Unity</span>
+                    <span class="tech-badge">Steam</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rubik's Vision - AI -->
+            <div class="project-card active" data-filter-item data-category="ai" data-project="rubiks">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/rubiks-vision-preview.svg" alt="Rubik's Vision App" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="rubiks">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge demo">Demo</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">Rubik's Vision</h3>
+                    <span class="project-category-tag ai">AI</span>
+                  </div>
+                  <p class="project-impact">AI-powered mobile app using computer vision to solve Rubik's cubes — showcasing mobile development and CV expertise</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">Computer Vision</span>
+                    <span class="tech-badge">AI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </section>
+
+        <!-- Project Detail Modals will be added here via JavaScript -->
+        <div class="project-modal-container" id="project-modal-container">
+          <div class="project-modal-overlay" id="project-modal-overlay"></div>
+          <div class="project-modal" id="project-modal">
+            <button class="project-modal-close" id="project-modal-close">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="project-modal-content" id="project-modal-content">
+              <!-- Modal content will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
       </article>
       <article class="blog" data-page="blog">
         <header>
