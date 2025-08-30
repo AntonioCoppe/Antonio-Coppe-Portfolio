@@ -34,6 +34,7 @@ Antonio Coppe is a Software Engineer with 2+ years of experience specializing in
 - Ion Icons for UI elements
 
 ---
+
 ## Contact
 
 - **Email**: <antonio.coppe@gmail.com>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Antonio Coppe – Software Engineer Portfolio</title>
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/theme.css">
@@ -22,11 +22,31 @@
         <div class="info-content">
           <h1 class="name" title="Antonio Coppe">Antonio Coppe</h1>
           <p class="title">Software Engineer</p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-number">CS</span>
+              <span class="stat-label">'25 Grad</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-number">🇮🇹</span>
+              <span class="stat-label">Toronto</span>
+            </div>
+          </div>
         </div>
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
+        <div class="sidebar-actions">
+          <a href="#" class="sidebar-resume-btn">
+            <ion-icon name="document-outline"></ion-icon>
+            Download Resume
+          </a>
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
       </div>
       <div class="sidebar-info_more">
         <div class="separator"></div>
@@ -109,16 +129,105 @@
         </ul>
       </nav>
       <article class="about  active" data-page="about">
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-        <section class="about-text">
-          <p>
-            I'm an accomplished Software Engineer with 2+ years of experience delivering backend and full-stack solutions in C#, Python, Java, and JavaScript. I specialize in building high-availability microservices on AWS with Terraform, designing secure authentication and RBAC flows, and shipping React/Next.js applications.
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              I build backend systems that scale to thousands of users with 99.9% uptime.
+            </h1>
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <span class="metric-number">15×</span>
+                <span class="metric-label">Performance Gain</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">20k+</span>
+                <span class="metric-label">Daily Requests</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">99.9%</span>
+                <span class="metric-label">Uptime</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">2+</span>
+                <span class="metric-label">Years Experience</span>
+              </div>
+            </div>
+            <div class="hero-cta">
+              <a href="mailto:antonio.coppe@gmail.com" class="cta-button primary">
+                <ion-icon name="mail-outline"></ion-icon>
+                Get In Touch
+              </a>
+              <a href="https://linkedin.com/in/antonio-coppe" class="cta-button secondary" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                LinkedIn
+              </a>
+              <a href="https://github.com/AntonioCoppe" class="cta-button secondary" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+                GitHub
+              </a>
+              <a href="#" class="cta-button secondary resume-btn">
+                <ion-icon name="document-outline"></ion-icon>
+                Resume
+              </a>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+          <h2 class="section-title">About Me</h2>
+          <p class="about-lead">
+            Helping companies scale cloud systems from prototype to 20k+ daily users.
           </p>
-          <p>
-            My expertise includes observability with Sentry, CI/CD automation, and driving technical strategy to balance speed, quality, and scalability. I've worked on everything from performance optimization that increased simulation throughput by 15x to architecting microservices supporting 1,000+ concurrent sessions with 99.9% uptime.
-          </p>
+          <div class="about-grid">
+            <div class="about-content">
+              <ul class="achievement-list">
+                <li class="achievement-item">
+                  <ion-icon name="trending-up-outline"></ion-icon>
+                  <span><strong>Optimized C# simulations by 15× throughput</strong> (20 FPS → 300 FPS)</span>
+                </li>
+                <li class="achievement-item">
+                  <ion-icon name="cloud-outline"></ion-icon>
+                  <span><strong>Architected AWS ECS microservices</strong> handling 1000+ concurrent sessions with 99.9% uptime</span>
+                </li>
+                <li class="achievement-item">
+                  <ion-icon name="settings-outline"></ion-icon>
+                  <span><strong>Automated CI/CD pipelines</strong> with Docker, Terraform, and GitHub Actions</span>
+                </li>
+                <li class="achievement-item">
+                  <ion-icon name="business-outline"></ion-icon>
+                  <span><strong>Delivered booking/payment platforms</strong> powering real businesses</span>
+                </li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <h3 class="tech-title">Tech Stack</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <span class="tech-icon">⚡</span>
+                  <span class="tech-name">Backend</span>
+                  <span class="tech-details">C#, Python, Java</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-icon">⚛️</span>
+                  <span class="tech-name">Frontend</span>
+                  <span class="tech-details">React, Next.js</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-icon">☁️</span>
+                  <span class="tech-name">Cloud</span>
+                  <span class="tech-details">AWS, Terraform</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-icon">🔧</span>
+                  <span class="tech-name">DevOps</span>
+                  <span class="tech-details">Docker, CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section class="service">
           <h3 class="h3 service-title">What i'm doing</h3>
@@ -169,106 +278,57 @@
             </li>
           </ul>
         </section>
-        <section class="testimonials">
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-          <ul class="testimonials-list has-scrollbar">
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
+        <!-- Highlights Section -->
+        <section class="highlights-section">
+          <h2 class="section-title">Recent Wins</h2>
+          <div class="highlights-grid">
+            <div class="highlight-card">
+              <div class="highlight-icon">
+                <ion-icon name="trending-up-outline"></ion-icon>
               </div>
-            </li>
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <div class="modal-container" data-modal-container>
-          <div class="overlay" data-overlay></div>
-          <section class="testimonials-modal">
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/antonio-profile.jpg" alt="Antonio Coppe" width="80" data-modal-img>
-              </figure>
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-            <div class="modal-content">
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-              <time datetime="2021-06-14">14 June, 2021</time>
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+              <div class="highlight-content">
+                <h3 class="highlight-title">Performance Optimization</h3>
+                <p class="highlight-description">
+                  Boosted simulation throughput by 15× (20 FPS → 300 FPS) using advanced C# algorithms
                 </p>
               </div>
             </div>
-          </section>
-        </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">
+                <ion-icon name="cloud-outline"></ion-icon>
+              </div>
+              <div class="highlight-content">
+                <h3 class="highlight-title">Microservices Architecture</h3>
+                <p class="highlight-description">
+                  Built AWS ECS services handling 20k+ daily requests with 99.9% uptime
+                </p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">
+                <ion-icon name="school-outline"></ion-icon>
+              </div>
+              <div class="highlight-content">
+                <h3 class="highlight-title">Published Research</h3>
+                <p class="highlight-description">
+                  "Patterns for Using Hypothesis Engineering to Manage Architectural Uncertainties"
+                </p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">
+                <ion-icon name="business-outline"></ion-icon>
+              </div>
+              <div class="highlight-content">
+                <h3 class="highlight-title">Real Business Impact</h3>
+                <p class="highlight-description">
+                  Delivered production booking/payment platforms for live businesses
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section class="clients">
           <h3 class="h3 clients-title">Clients</h3>
           <ul class="clients-list">
@@ -291,90 +351,193 @@
         </section>
       </article>
       <article class="resume" data-page="resume">
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+
+        <!-- Experience Section -->
+        <section class="resume-section experience-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
-            <h3 class="h3">Education</h3>
+            <h2 class="section-title">Experience</h2>
           </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Libera Università di Bolzano</h4>
-              <span>2021 — 2025</span>
-              <p class="timeline-text">
-                Bachelor of Science in Computer Science with GPA 3.7. Published research on "Patterns for Using Hypothesis Engineering to Manage Architectural Uncertainties".
-              </p>
-            </li>
-          </ol>
-        </section>
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+          
+          <div class="experience-card">
+            <div class="experience-header">
+              <div class="experience-logo">
+                <div class="company-logo-placeholder">VS</div>
+              </div>
+              <div class="experience-info">
+                <h3 class="job-title">Software Engineer (Backend & Game Services)</h3>
+                <p class="company-name">Vinyl Studios</p>
+                <p class="job-period">January 2023 — January 2025</p>
+              </div>
             </div>
-            <h3 class="h3">Experience</h3>
+            <ul class="experience-achievements">
+              <li class="achievement-item">
+                <ion-icon name="trending-up-outline"></ion-icon>
+                <span>Boosted simulation performance 15× (20 → 300 FPS) via optimized C# algorithms</span>
+              </li>
+              <li class="achievement-item">
+                <ion-icon name="cloud-outline"></ion-icon>
+                <span>Built React dashboard + architected C# microservice on AWS ECS (1000+ concurrent sessions, 99.9% uptime)</span>
+              </li>
+              <li class="achievement-item">
+                <ion-icon name="settings-outline"></ion-icon>
+                <span>Implemented observability with Sentry + automated CI/CD pipelines</span>
+              </li>
+            </ul>
           </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Software Engineer (Backend & Game Services)</h4>
-              <span>Jan 2023 — Jan 2025</span>
-              <p class="timeline-text">
-                Vinyl Studios, Melbourne, Australia. Refactored C# algorithms boosting performance from 20 FPS to 300 FPS. Built React dashboard and architected C# microservice on AWS ECS supporting 1,000+ concurrent sessions with 99.9% uptime.
-              </p>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Junior Developer Analyst</h4>
-              <span>Jul 2022 — Jan 2023</span>
-              <p class="timeline-text">
-                Multinext, Bolzano, Italy. Developed RESTful APIs using Python and Django processing 20,000+ daily requests. Automated MQTT message decryption with Bash scripts to restore reliable telemetry pipelines.
-              </p>
-            </li>
-          </ol>
+
+          <div class="experience-card">
+            <div class="experience-header">
+              <div class="experience-logo">
+                <img src="./assets/images/multiprotexion-logo.png" alt="Multinext" class="company-logo">
+              </div>
+              <div class="experience-info">
+                <h3 class="job-title">Junior Developer Analyst</h3>
+                <p class="company-name">Multinext</p>
+                <p class="job-period">July 2022 — January 2023</p>
+              </div>
+            </div>
+            <ul class="experience-achievements">
+              <li class="achievement-item">
+                <ion-icon name="server-outline"></ion-icon>
+                <span>Built REST APIs (Python/Django) processing 20k+ daily requests</span>
+              </li>
+              <li class="achievement-item">
+                <ion-icon name="refresh-outline"></ion-icon>
+                <span>Automated telemetry pipeline recovery (MQTT decryption + Bash scripts)</span>
+              </li>
+            </ul>
+          </div>
         </section>
-        <section class="skill">
-          <h3 class="h3 skills-title">My skills</h3>
-          <ul class="skills-list content-card">
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Backend Development (C#, Python, Java)</h5>
-                <data value="95">95%</data>
+
+        <!-- Education Section -->
+        <section class="resume-section education-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+            <h2 class="section-title">Education</h2>
+          </div>
+          <div class="education-card">
+            <div class="education-header">
+              <div class="education-logo">
+                <img src="./assets/images/unibz-logo.png" alt="Libera Università di Bolzano" class="university-logo">
               </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 95%;"></div>
+              <div class="education-info">
+                <h3 class="education-title">Libera Università di Bolzano</h3>
+                <p class="education-degree">Bachelor of Science in Computer Science</p>
+                <p class="education-details">2021 — 2025 • GPA: 3.7</p>
               </div>
-            </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">JavaScript (React, Next.js)</h5>
-                <data value="90">90%</data>
+            </div>
+            <ul class="education-highlights">
+              <li class="highlight-item">
+                <ion-icon name="document-text-outline"></ion-icon>
+                <span>Published research: "Patterns for Using Hypothesis Engineering to Manage Architectural Uncertainties"</span>
+              </li>
+              <li class="highlight-item">
+                <ion-icon name="library-outline"></ion-icon>
+                <span>Relevant courses: Distributed Systems, Cloud Computing, Algorithms, Software Engineering</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Skills/Tech Stack Section -->
+        <section class="resume-section skills-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <ion-icon name="code-slash-outline"></ion-icon>
+            </div>
+            <h2 class="section-title">Tech Stack</h2>
+          </div>
+          <div class="tech-stack-grid">
+            <div class="tech-category">
+              <h4 class="tech-category-title">Backend</h4>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="tech-logo">
+                  <span class="tech-name">C#</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  <span class="tech-name">Python</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-logo">
+                  <span class="tech-name">Java</span>
+                </div>
               </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
+            </div>
+            
+            <div class="tech-category">
+              <h4 class="tech-category-title">Frontend</h4>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-logo">
+                  <span class="tech-name">React</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="tech-logo">
+                  <span class="tech-name">Next.js</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-logo">
+                  <span class="tech-name">JavaScript</span>
+                </div>
               </div>
-            </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">AWS & Cloud Infrastructure</h5>
-                <data value="85">85%</data>
+            </div>
+
+            <div class="tech-category">
+              <h4 class="tech-category-title">Cloud</h4>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" class="tech-logo">
+                  <span class="tech-name">AWS</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="tech-logo">
+                  <span class="tech-name">Terraform</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-logo">
+                  <span class="tech-name">ECS/ECR</span>
+                </div>
               </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
+            </div>
+
+            <div class="tech-category">
+              <h4 class="tech-category-title">DevOps</h4>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-logo">
+                  <span class="tech-name">Docker</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" class="tech-logo">
+                  <span class="tech-name">CI/CD</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sentry/sentry-original.svg" alt="Sentry" class="tech-logo">
+                  <span class="tech-name">Sentry</span>
+                </div>
               </div>
-            </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">DevOps & CI/CD</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-          </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Download CTA Section -->
+        <section class="resume-section download-section">
+          <div class="download-cta">
+            <a href="#" class="download-full-btn" id="download-full-pdf-btn">
+              <ion-icon name="download-outline"></ion-icon>
+              Download Full Resume (PDF)
+            </a>
+            <p class="linkedin-reference">
+              Also available on <a href="https://linkedin.com/in/antonio-coppe" target="_blank">LinkedIn →</a>
+            </p>
+          </div>
         </section>
       </article>
       <article class="portfolio" data-page="portfolio">
