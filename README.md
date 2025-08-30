@@ -34,13 +34,6 @@ Antonio Coppe is a Software Engineer with 2+ years of experience specializing in
 - Ion Icons for UI elements
 
 ---
-
-## Getting Started
-
-1. Clone or download the repository
-2. Open `index.html` in your web browser
-3. Navigate through the different sections using the sidebar navigation
-
 ## Contact
 
 - **Email**: <antonio.coppe@gmail.com>
