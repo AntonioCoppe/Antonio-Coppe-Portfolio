@@ -187,10 +187,16 @@ for (let i = 0; i < formInputs.length; i++) {
 
 // EmailJS configuration and form submission
 document.addEventListener('DOMContentLoaded', function() {
+  // EmailJS Configuration - Safe to include in client-side code
+  const EMAILJS_CONFIG = {
+    PUBLIC_KEY: 'YOUR_PUBLIC_KEY', // Replace with your actual public key
+    SERVICE_ID: 'service_zxeblsc', // Your Gmail service ID
+    TEMPLATE_ID: 'YOUR_TEMPLATE_ID' // Replace with your template ID
+  };
+
   // Initialize EmailJS with your public key
-  // You'll need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
   if (typeof emailjs !== 'undefined') {
-    emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
   }
 
   const contactForm = document.getElementById('contact-form');
@@ -223,8 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Send email using EmailJS
-      // You'll need to replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+      emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
         .then(function(response) {
           console.log('Email sent successfully:', response);
           showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');

@@ -22,7 +22,7 @@ Your portfolio contact form is now ready to send emails! Follow these steps to c
 2. Click **Create New Template**
 3. Use this template content:
 
-```
+```text
 Subject: New Contact Form Message from {{from_name}}
 
 Hello {{to_name}},
@@ -87,16 +87,19 @@ emailjs.send('service_gmail123', 'template_xyz789', templateParams)
 ## Troubleshooting
 
 **Form not sending emails?**
+
 - Check browser console for error messages
 - Verify all IDs are correctly replaced
 - Ensure EmailJS service is connected properly
 
 **Emails going to spam?**
+
 - This is normal initially
 - Mark the first few as "Not Spam" to improve deliverability
 - Consider upgrading to EmailJS paid plan for better deliverability
 
 **Rate limits exceeded?**
+
 - Free plan: 200 emails/month
 - Upgrade to paid plan if needed
 
