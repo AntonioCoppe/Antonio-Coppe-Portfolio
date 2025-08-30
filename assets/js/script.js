@@ -185,6 +185,83 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+// EmailJS configuration and form submission
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize EmailJS with your public key
+  // You'll need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  const formMessages = document.getElementById('form-messages');
+  const btnText = document.getElementById('btn-text');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Check if EmailJS is loaded
+      if (typeof emailjs === 'undefined') {
+        showMessage('EmailJS service is not available. Please try again later.', 'error');
+        return;
+      }
+
+      // Get form data
+      const formData = new FormData(contactForm);
+      const templateParams = {
+        from_name: formData.get('from_name'),
+        from_email: formData.get('from_email'),
+        message: formData.get('message'),
+        to_name: 'Antonio Coppe'
+      };
+
+      // Update button to show loading state
+      if (formBtn) {
+        formBtn.disabled = true;
+        btnText.textContent = 'Sending...';
+      }
+
+      // Send email using EmailJS
+      // You'll need to replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+          console.log('Email sent successfully:', response);
+          showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+          contactForm.reset();
+          
+          // Reset button state
+          if (formBtn) {
+            formBtn.disabled = true; // Keep disabled until form is filled again
+            btnText.textContent = 'Send Message';
+          }
+        })
+        .catch(function(error) {
+          console.error('Email sending failed:', error);
+          showMessage('Sorry, there was an error sending your message. Please try again or contact me directly at antonio.coppe@gmail.com', 'error');
+          
+          // Reset button state
+          if (formBtn) {
+            formBtn.disabled = false;
+            btnText.textContent = 'Send Message';
+          }
+        });
+    });
+  }
+
+  function showMessage(message, type) {
+    if (formMessages) {
+      formMessages.textContent = message;
+      formMessages.className = `form-messages ${type} show`;
+      
+      // Hide message after 5 seconds
+      setTimeout(() => {
+        formMessages.classList.remove('show');
+      }, 5000);
+    }
+  }
+});
+
 
 
 // page navigation variables
@@ -527,3 +604,263 @@ function initializeProjectModals() {
     }
   });
 }
+
+// Blog filtering functionality
+function initBlogFilters() {
+  const filterTabs = document.querySelectorAll('[data-blog-filter]');
+  const blogItems = document.querySelectorAll('.blog-post-item[data-category]');
+
+  if (filterTabs.length === 0 || blogItems.length === 0) return;
+
+  // Add click events to filter tabs
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const filterValue = tab.dataset.blogFilter;
+      
+      // Update active tab
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Filter blog items
+      blogItems.forEach(item => {
+        const itemCategory = item.dataset.category;
+        
+        if (filterValue === 'all' || itemCategory === filterValue) {
+          item.style.display = 'block';
+          // Add slight animation
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(-20px)';
+          
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
+// Enhanced blog post interactions
+function initBlogInteractions() {
+  const blogPosts = document.querySelectorAll('.blog-post-item a[data-blog-post]');
+  
+  blogPosts.forEach(post => {
+    post.addEventListener('click', (e) => {
+      e.preventDefault();
+      const postId = post.dataset.blogPost;
+      
+      // You can expand this to show detailed blog post content
+      console.log(`Opening blog post: ${postId}`);
+      
+      // For now, we'll just show an alert indicating the post would open
+      // In a real implementation, you'd open a modal or navigate to a detail page
+      showBlogPostPlaceholder(postId);
+    });
+  });
+}
+
+// Global variables to store blog modal elements
+let currentBlogModal = null;
+let currentBlogOverlay = null;
+
+function showBlogPostPlaceholder(postId) {
+  const postTitles = {
+    'c-sharp-optimization': 'How I Optimized C# Simulations by 15× (20 FPS → 300 FPS)',
+    'aws-microservices': 'Scaling Microservices on AWS ECS for 20k+ Daily Requests',
+    'cicd-docker': 'From Docker to Terraform: Building CI/CD Pipelines That Don\'t Break',
+    'observability-sentry': 'Observability in Practice: Using Sentry for Scalable Systems',
+    'booking-platform': 'Building a Booking Platform with Supabase + Stripe + ICS Sync',
+    'developer-analyst-experience': 'What I Learned as a Developer Analyst Handling 20k+ Requests/Day',
+    'research-publication': 'Publishing Research While Scaling Real Systems'
+  };
+  
+  const title = postTitles[postId] || 'Blog Post';
+  
+  // Create a simple modal-like notification
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--eerie-black-2);
+    border: 1px solid var(--jet);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  `;
+  
+  notification.innerHTML = `
+    <h3 style="color: var(--orange-yellow-crayola); margin-bottom: 15px; font-size: 1.2em;">
+      ${title}
+    </h3>
+    <p style="color: var(--light-gray); margin-bottom: 20px; line-height: 1.6;">
+      This would open the full blog post with detailed technical content, code examples, 
+      and implementation insights. The post would include:
+    </p>
+    <ul style="color: var(--light-gray-70); text-align: left; margin-bottom: 20px; padding-left: 20px;">
+      <li>Problem description and context</li>
+      <li>Technical implementation details</li>
+      <li>Code snippets and architecture diagrams</li>
+      <li>Performance metrics and outcomes</li>
+      <li>Key takeaways and lessons learned</li>
+    </ul>
+    <button onclick="closeBlogModal()" style="
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+    ">Close</button>
+  `;
+  
+  // Add overlay
+  const overlay = document.createElement('div');
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  `;
+  
+  // Store references globally so closeBlogModal can access them
+  currentBlogModal = notification;
+  currentBlogOverlay = overlay;
+  
+  overlay.addEventListener('click', closeBlogModal);
+  
+  document.body.appendChild(overlay);
+  document.body.appendChild(notification);
+  
+  // Add keyboard support
+  document.addEventListener('keydown', handleBlogModalKeydown);
+  
+  // Auto-remove after 10 seconds
+  setTimeout(() => {
+    closeBlogModal();
+  }, 10000);
+}
+
+// Function to properly close the blog modal
+function closeBlogModal() {
+  if (currentBlogModal && currentBlogModal.parentElement) {
+    currentBlogModal.remove();
+    currentBlogModal = null;
+  }
+  if (currentBlogOverlay && currentBlogOverlay.parentElement) {
+    currentBlogOverlay.remove();
+    currentBlogOverlay = null;
+  }
+  // Remove keyboard event listener
+  document.removeEventListener('keydown', handleBlogModalKeydown);
+}
+
+// Handle keyboard events for blog modal
+function handleBlogModalKeydown(e) {
+  if (e.key === 'Escape' && currentBlogModal) {
+    closeBlogModal();
+  }
+}
+
+// Newsletter functionality
+function initNewsletter() {
+  const newsletterBtn = document.getElementById('newsletter-submit');
+  const newsletterInput = document.getElementById('newsletter-email');
+
+  if (!newsletterBtn || !newsletterInput) return;
+
+  newsletterBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = newsletterInput.value.trim();
+
+    if (!email) {
+      showNewsletterMessage('Please enter your email address', 'error');
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      showNewsletterMessage('Please enter a valid email address', 'error');
+      return;
+    }
+
+    // Simulate newsletter signup
+    newsletterBtn.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>Subscribing...';
+    newsletterBtn.disabled = true;
+
+    setTimeout(() => {
+      showNewsletterMessage('Thanks for subscribing! You\'ll receive technical insights monthly.', 'success');
+      newsletterInput.value = '';
+      newsletterBtn.innerHTML = '<ion-icon name="send-outline"></ion-icon>Subscribe';
+      newsletterBtn.disabled = false;
+    }, 1500);
+  });
+
+  // Submit on Enter key
+  newsletterInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      newsletterBtn.click();
+    }
+  });
+}
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function showNewsletterMessage(message, type) {
+  const existingMessage = document.querySelector('.newsletter-message');
+  if (existingMessage) {
+    existingMessage.remove();
+  }
+
+  const messageEl = document.createElement('div');
+  messageEl.className = 'newsletter-message';
+  messageEl.style.cssText = `
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: var(--fs-7);
+    text-align: center;
+    ${type === 'success' 
+      ? 'background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);'
+      : 'background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3);'
+    }
+  `;
+  messageEl.textContent = message;
+
+  const newsletterForm = document.querySelector('.newsletter-form');
+  newsletterForm.appendChild(messageEl);
+
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    if (messageEl.parentElement) {
+      messageEl.remove();
+    }
+  }, 5000);
+}
+
+// Initialize blog functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initBlogFilters();
+  initBlogInteractions();
+  initNewsletter();
+});

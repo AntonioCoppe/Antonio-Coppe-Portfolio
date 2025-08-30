@@ -852,120 +852,372 @@
         </div>
       </article>
       <article class="blog" data-page="blog">
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
+        <header class="blog-header">
+          <div class="blog-title-section">
+            <h2 class="h2 article-title">Insights & Learnings</h2>
+            <p class="blog-subtitle">
+              Lessons from building scalable backend systems, cloud infrastructure, and developer tools.
+            </p>
+          </div>
+          
+          <!-- Featured Posts Section -->
+          <div class="featured-posts-section">
+            <h3 class="featured-title">
+              <ion-icon name="star-outline"></ion-icon>
+              Most Popular
+            </h3>
+            <div class="featured-posts-grid">
+              <div class="featured-post-card">
+                <div class="featured-post-content">
+                  <h4 class="featured-post-title">How I Optimized C# Simulations by 15×</h4>
+                  <p class="featured-post-summary">From 20 FPS to 300 FPS using advanced algorithms</p>
+                </div>
+                <div class="featured-post-metric">
+                  <span class="metric-number">15×</span>
+                  <span class="metric-label">Faster</span>
+                </div>
+              </div>
+              <div class="featured-post-card">
+                <div class="featured-post-content">
+                  <h4 class="featured-post-title">Scaling AWS ECS for 20k+ Daily Requests</h4>
+                  <p class="featured-post-summary">Microservices architecture with 99.9% uptime</p>
+                </div>
+                <div class="featured-post-metric">
+                  <span class="metric-number">99.9%</span>
+                  <span class="metric-label">Uptime</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="blog-filters">
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-blog-filter="all">All Posts</button>
+              <button class="filter-tab" data-blog-filter="backend">Backend</button>
+              <button class="filter-tab" data-blog-filter="cloud">Cloud</button>
+              <button class="filter-tab" data-blog-filter="devops">DevOps</button>
+              <button class="filter-tab" data-blog-filter="projects">Projects</button>
+              <button class="filter-tab" data-blog-filter="research">Research</button>
+            </div>
+          </div>
         </header>
         <section class="blog-posts">
           <ul class="blog-posts-list">
-            <li class="blog-post-item">
-              <a href="https://github.com/AntonioCoppe/notion-template-shop" target="_blank">
+            <!-- Backend / Performance Posts -->
+            <li class="blog-post-item" data-category="backend">
+              <a href="#" data-blog-post="c-sharp-optimization">
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Building a Multi-Vendor Marketplace" loading="lazy">
+                  <div class="code-snippet-preview">
+                    <div class="code-header">
+                      <span class="code-lang">C#</span>
+                      <span class="performance-badge">15× Faster</span>
+                    </div>
+                    <pre class="code-content">// Optimized simulation loop
+for (int i = 0; i < entities.Length; i++) {
+    ProcessEntity(ref entities[i]);
+}
+// Result: 20 FPS → 300 FPS</pre>
+                  </div>
                 </figure>
                 <div class="blog-content">
                   <div class="blog-meta">
-                    <p class="blog-category">Development</p>
+                    <p class="blog-category backend">Backend</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-11-20">Nov 20, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">How I Optimized C# Simulations by 15× (20 FPS → 300 FPS)</h3>
+                  <p class="blog-text">
+                    Deep dive into memory allocation, data structures, and algorithm optimization that boosted game simulation performance from 20 to 300 FPS in production.
+                  </p>
+                  <div class="blog-tags">
+                    <span class="tag">Performance</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">Algorithms</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item" data-category="cloud">
+              <a href="#" data-blog-post="aws-microservices">
+                <figure class="blog-banner-box">
+                  <div class="architecture-diagram">
+                    <div class="diagram-header">
+                      <span class="diagram-title">AWS ECS Architecture</span>
+                      <span class="uptime-badge">99.9% Uptime</span>
+                    </div>
+                    <div class="diagram-content">
+                      <div class="aws-component">ALB</div>
+                      <div class="arrow">→</div>
+                      <div class="aws-component">ECS</div>
+                      <div class="arrow">→</div>
+                      <div class="aws-component">RDS</div>
+                    </div>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category cloud">Cloud</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-10-15">Oct 15, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Scaling Microservices on AWS ECS for 20k+ Daily Requests</h3>
+                  <p class="blog-text">
+                    Building a production-ready microservices architecture that handles 1000+ concurrent sessions with automated scaling and monitoring.
+                  </p>
+                  <div class="blog-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">ECS</span>
+                    <span class="tag">Microservices</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item" data-category="devops">
+              <a href="#" data-blog-post="cicd-docker">
+                <figure class="blog-banner-box">
+                  <div class="pipeline-visualization">
+                    <div class="pipeline-header">
+                      <span class="pipeline-title">CI/CD Pipeline</span>
+                      <span class="status-badge success">✓ Passing</span>
+                    </div>
+                    <div class="pipeline-stages">
+                      <div class="stage">Build</div>
+                      <div class="stage">Test</div>
+                      <div class="stage">Deploy</div>
+                    </div>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category devops">DevOps</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-09-30">Sep 30, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">From Docker to Terraform: Building CI/CD Pipelines That Don't Break</h3>
+                  <p class="blog-text">
+                    Step-by-step guide to creating robust deployment pipelines with GitHub Actions, Docker, and Terraform for zero-downtime deployments.
+                  </p>
+                  <div class="blog-tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">CI/CD</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item" data-category="backend">
+              <a href="#" data-blog-post="observability-sentry">
+                <figure class="blog-banner-box">
+                  <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                      <span class="dashboard-title">Sentry Dashboard</span>
+                      <span class="error-rate">0.02% Error Rate</span>
+                    </div>
+                    <div class="dashboard-metrics">
+                      <div class="metric">
+                        <span class="metric-label">Requests</span>
+                        <span class="metric-value">20k+/day</span>
+                      </div>
+                      <div class="metric">
+                        <span class="metric-label">Response Time</span>
+                        <span class="metric-value">< 100ms</span>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category backend">Backend</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-08-22">Aug 22, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Observability in Practice: Using Sentry for Scalable Systems</h3>
+                  <p class="blog-text">
+                    Real-world implementation of monitoring, error tracking, and performance optimization using Sentry in production microservices.
+                  </p>
+                  <div class="blog-tags">
+                    <span class="tag">Sentry</span>
+                    <span class="tag">Monitoring</span>
+                    <span class="tag">Performance</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item" data-category="projects">
+              <a href="#" data-blog-post="booking-platform">
+                <figure class="blog-banner-box">
+                  <div class="integration-diagram">
+                    <div class="integration-header">
+                      <span class="integration-title">Payment Integration</span>
+                      <span class="integration-badge">Production</span>
+                    </div>
+                    <div class="integration-flow">
+                      <div class="service">Supabase</div>
+                      <div class="connector">↔</div>
+                      <div class="service">Stripe</div>
+                      <div class="connector">↔</div>
+                      <div class="service">Booking.com</div>
+                    </div>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category projects">Projects</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-07-18">Jul 18, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Building a Booking Platform with Supabase + Stripe + ICS Sync</h3>
+                  <p class="blog-text">
+                    Complete walkthrough of building a production booking system with payment processing, calendar sync, and third-party integrations.
+                  </p>
+                  <div class="blog-tags">
+                    <span class="tag">Supabase</span>
+                    <span class="tag">Stripe</span>
+                    <span class="tag">Integration</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item" data-category="projects">
+              <a href="https://github.com/AntonioCoppe/notion-template-shop" target="_blank">
+                <figure class="blog-banner-box">
+                  <div class="project-screenshot">
+                    <div class="screenshot-header">
+                      <span class="project-name">ElectroQuote Pro</span>
+                      <span class="tech-stack">Next.js + Python</span>
+                    </div>
+                    <div class="screenshot-content">
+                      <div class="ui-element">🔍 Real-time Search</div>
+                      <div class="ui-element">💰 Price Comparison</div>
+                      <div class="ui-element">📊 Analytics Dashboard</div>
+                    </div>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category projects">Projects</p>
                     <span class="dot"></span>
                     <time datetime="2024-12-15">Dec 15, 2024</time>
                   </div>
-                  <h3 class="h3 blog-item-title">Building a Multi-Vendor Marketplace with Next.js 15</h3>
+                  <h3 class="h3 blog-item-title">ElectroQuote Pro: Comparing Live Prices Across Multiple Vendors</h3>
                   <p class="blog-text">
-                    A modern marketplace for Notion templates built with Next.js 15, Supabase, and Stripe Connect. Features role-based access control, vendor onboarding, and secure payment processing.
+                    Full-stack marketplace with web scraping, real-time price comparison, and vendor management. Features Next.js frontend with Python backend processing.
                   </p>
+                  <div class="blog-tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Web Scraping</span>
+                  </div>
                 </div>
               </a>
             </li>
-            <li class="blog-post-item">
-              <a href="#">
+
+            <li class="blog-post-item" data-category="research">
+              <a href="#" data-blog-post="developer-analyst-experience">
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                  <div class="experience-summary">
+                    <div class="experience-header">
+                      <span class="role-title">Developer Analyst</span>
+                      <span class="company">Multinext</span>
+                    </div>
+                    <div class="experience-metrics">
+                      <div class="exp-metric">
+                        <span class="exp-number">20k+</span>
+                        <span class="exp-label">Requests/Day</span>
+                      </div>
+                      <div class="exp-metric">
+                        <span class="exp-number">MQTT</span>
+                        <span class="exp-label">Telemetry</span>
+                      </div>
+                    </div>
+                  </div>
                 </figure>
                 <div class="blog-content">
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category research">Research</p>
                     <span class="dot"></span>
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2024-06-10">Jun 10, 2024</time>
                   </div>
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+                  <h3 class="h3 blog-item-title">What I Learned as a Developer Analyst Handling 20k+ Requests/Day</h3>
                   <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                    Lessons from building REST APIs, automating telemetry pipelines, and managing high-volume data processing in a production environment.
                   </p>
+                  <div class="blog-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">APIs</span>
+                  </div>
                 </div>
               </a>
             </li>
-            <li class="blog-post-item">
-              <a href="#">
+
+            <li class="blog-post-item" data-category="research">
+              <a href="#" data-blog-post="research-publication">
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                  <div class="research-paper">
+                    <div class="paper-header">
+                      <span class="paper-title">Research Publication</span>
+                      <span class="publication-status">Published</span>
+                    </div>
+                    <div class="paper-content">
+                      <div class="paper-topic">Hypothesis Engineering</div>
+                      <div class="paper-subtitle">Architectural Uncertainties</div>
+                    </div>
+                  </div>
                 </figure>
                 <div class="blog-content">
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category research">Research</p>
                     <span class="dot"></span>
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2024-05-15">May 15, 2024</time>
                   </div>
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+                  <h3 class="h3 blog-item-title">Publishing Research While Scaling Real Systems</h3>
                   <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                    How I balanced academic research on "Patterns for Using Hypothesis Engineering" with hands-on software development in production environments.
                   </p>
-                </div>
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="#">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-                    <span class="dot"></span>
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  <div class="blog-tags">
+                    <span class="tag">Research</span>
+                    <span class="tag">Architecture</span>
+                    <span class="tag">Academic</span>
                   </div>
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-                </div>
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="#">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-                    <span class="dot"></span>
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-                </div>
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="#">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-                    <span class="dot"></span>
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
                 </div>
               </a>
             </li>
           </ul>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+          <div class="newsletter-content">
+            <div class="newsletter-header">
+              <h3 class="newsletter-title">
+                <ion-icon name="mail-outline"></ion-icon>
+                Stay Updated
+              </h3>
+              <p class="newsletter-subtitle">
+                Get my monthly notes on scaling systems, cloud architecture, and backend engineering insights.
+              </p>
+            </div>
+            <div class="newsletter-form">
+              <div class="form-group">
+                <input type="email" placeholder="your.email@company.com" class="newsletter-input" id="newsletter-email">
+                <button class="newsletter-btn" id="newsletter-submit">
+                  <ion-icon name="send-outline"></ion-icon>
+                  Subscribe
+                </button>
+              </div>
+              <p class="newsletter-note">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                No spam. Unsubscribe anytime. Technical insights only.
+              </p>
+            </div>
+          </div>
         </section>
       </article>
       <article class="contact" data-page="contact">
@@ -981,21 +1233,26 @@
         </section>
         <section class="contact-form">
           <h3 class="h3 form-title">Contact Form</h3>
-          <form action="#" class="form" data-form>
+          <form class="form" data-form id="contact-form">
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <input type="text" name="from_name" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="from_email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span id="btn-text">Send Message</span>
             </button>
           </form>
+          
+          <!-- Success/Error Messages -->
+          <div id="form-messages" class="form-messages"></div>
         </section>
       </article>
     </div>
   </main>
+  <!-- EmailJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
