@@ -189,9 +189,9 @@ for (let i = 0; i < formInputs.length; i++) {
 document.addEventListener('DOMContentLoaded', function() {
   // EmailJS Configuration - Safe to include in client-side code
   const EMAILJS_CONFIG = {
-    PUBLIC_KEY: 'YOUR_PUBLIC_KEY', // Replace with your actual public key
+    PUBLIC_KEY: '_zJeXCVG9m3XL2Uzz', // Your EmailJS public key
     SERVICE_ID: 'service_zxeblsc', // Your Gmail service ID
-    TEMPLATE_ID: 'YOUR_TEMPLATE_ID' // Replace with your template ID
+    TEMPLATE_ID: 'template_iwrq2ig' // Your email template ID
   };
 
   // Initialize EmailJS with your public key
@@ -264,6 +264,111 @@ document.addEventListener('DOMContentLoaded', function() {
         formMessages.classList.remove('show');
       }, 5000);
     }
+  }
+
+  // Newsletter subscription functionality
+  const newsletterEmail = document.getElementById('newsletter-email');
+  const newsletterSubmit = document.getElementById('newsletter-submit');
+
+  if (newsletterSubmit && newsletterEmail) {
+    newsletterSubmit.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const email = newsletterEmail.value.trim();
+      
+      // Validate email
+      if (!email) {
+        showNewsletterMessage('Please enter your email address.', 'error');
+        return;
+      }
+      
+      if (!isValidEmail(email)) {
+        showNewsletterMessage('Please enter a valid email address.', 'error');
+        return;
+      }
+
+      // Check if EmailJS is loaded
+      if (typeof emailjs === 'undefined') {
+        showNewsletterMessage('Service temporarily unavailable. Please try again later.', 'error');
+        return;
+      }
+
+      // Update button to show loading state
+      const originalText = newsletterSubmit.innerHTML;
+      newsletterSubmit.disabled = true;
+      newsletterSubmit.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon>Subscribing...';
+
+      // Prepare newsletter signup data
+      const newsletterData = {
+        subscriber_email: email,
+        signup_date: new Date().toLocaleDateString(),
+        source: 'Portfolio Newsletter',
+        to_name: 'Antonio Coppe'
+      };
+
+      // Send newsletter signup notification using EmailJS
+      emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, {
+        from_name: 'Newsletter Subscriber',
+        from_email: email,
+        message: `New newsletter subscription from: ${email}\n\nSignup Date: ${newsletterData.signup_date}\nSource: ${newsletterData.source}\n\nPlease add this email to your newsletter list.`,
+        to_name: 'Antonio Coppe'
+      })
+      .then(function(response) {
+        console.log('Newsletter signup sent:', response);
+        showNewsletterMessage('🎉 Welcome! You\'re now subscribed to my technical insights.', 'success');
+        newsletterEmail.value = '';
+        
+        // Reset button
+        newsletterSubmit.disabled = false;
+        newsletterSubmit.innerHTML = originalText;
+      })
+      .catch(function(error) {
+        console.error('Newsletter signup failed:', error);
+        showNewsletterMessage('Sorry, there was an error. Please try again or contact me directly.', 'error');
+        
+        // Reset button
+        newsletterSubmit.disabled = false;
+        newsletterSubmit.innerHTML = originalText;
+      });
+    });
+
+    // Allow Enter key to submit
+    newsletterEmail.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        newsletterSubmit.click();
+      }
+    });
+  }
+
+  // Email validation helper
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  // Newsletter message display
+  function showNewsletterMessage(message, type) {
+    // Create or update newsletter message element
+    let newsletterMessages = document.getElementById('newsletter-messages');
+    
+    if (!newsletterMessages) {
+      newsletterMessages = document.createElement('div');
+      newsletterMessages.id = 'newsletter-messages';
+      newsletterMessages.className = 'newsletter-messages';
+      
+      const newsletterForm = document.querySelector('.newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.appendChild(newsletterMessages);
+      }
+    }
+    
+    newsletterMessages.textContent = message;
+    newsletterMessages.className = `newsletter-messages ${type} show`;
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      newsletterMessages.classList.remove('show');
+    }, 5000);
   }
 });
 
