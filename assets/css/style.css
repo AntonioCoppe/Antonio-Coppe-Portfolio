@@ -1854,7 +1854,7 @@ main {
 }
 
 .portfolio-title-section {
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
 }
 
@@ -1870,8 +1870,7 @@ main {
   content: "";
   position: absolute;
   bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 60px;
   height: 4px;
   background: var(--gold-gradient);
@@ -1883,7 +1882,7 @@ main {
   color: var(--light-gray);
   line-height: 1.6;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Portfolio Filters */
@@ -2690,7 +2689,7 @@ main {
 }
 
 .blog-title-section {
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
 }
 
@@ -2700,8 +2699,8 @@ main {
   margin-top: 10px;
   line-height: 1.6;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Featured Posts Section */
