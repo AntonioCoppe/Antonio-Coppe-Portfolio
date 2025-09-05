@@ -8,17 +8,45 @@
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/theme.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Icon Sprite -->
+  <link rel="preload" href="./assets/icons/icons-sprite.svg" as="image" type="image/svg+xml">
+
+  <!-- Self-hosted Fonts -->
+  <link rel="preload" href="./assets/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/poppins-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('./assets/fonts/poppins-regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('./assets/fonts/poppins-500.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('./assets/fonts/poppins-600.woff2') format('woff2');
+    }
+  </style>
 </head>
 <body>
   <main>
     <aside class="sidebar" data-sidebar>
       <div class="sidebar-info">
         <figure class="avatar-box">
-          <img src="./assets/images/antonio-profile.jpg" alt="Antonio Coppe" width="80">
+          <img src="./assets/images/antonio-profile.jpg" alt="Antonio Coppe" width="80" loading="lazy" decoding="async">
         </figure>
+        
         <div class="info-content">
           <h1 class="name" title="Antonio Coppe">Antonio Coppe</h1>
           <p class="title">Software Engineer</p>
@@ -39,7 +67,9 @@
         </div>
         <div class="sidebar-actions">
           <a href="#" class="sidebar-resume-btn">
-            <ion-icon name="document-outline"></ion-icon>
+            <svg class="icon" width="20" height="20">
+              <use href="#icon-document-outline"></use>
+            </svg>
             Download Resume
           </a>
           <button class="info_more-btn" data-sidebar-btn>
@@ -438,7 +468,9 @@
               <h4 class="tech-category-title">Backend</h4>
               <div class="tech-items">
                 <div class="tech-item">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="tech-logo">
+                  <svg class="tech-logo" width="40" height="40">
+                    <use href="#devicon-csharp-original"></use>
+                  </svg>
                   <span class="tech-name">C#</span>
                 </div>
                 <div class="tech-item">
@@ -1232,10 +1264,28 @@ for (int i = 0; i < entities.Length; i++) {
       </article>
     </div>
   </main>
-  <!-- EmailJS CDN -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- EmailJS (self-hosted) -->
+  <script type="text/javascript" src="./assets/js/emailjs.min.js"></script>
   <script src="./assets/js/script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registered:', registration);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+
+  <!-- Icon Sprite -->
+  <div style="display: none;">
+    <!--#include file="./assets/icons/icons-sprite.svg" -->
+  </div>
 </body>
 </html>
