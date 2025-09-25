@@ -491,20 +491,21 @@ function initializeProjectModals() {
   // Project data for modals
   const projectData = {
     electroquote: {
-      title: "ElectroQuote Pro V2",
+      title: "FuseQuote",
       category: "Full-Stack Development",
       status: "In Production",
-      overview: "A comprehensive electrical pricing platform that revolutionizes how contractors get real-time quotes. The system scrapes multiple supplier websites to provide instant, accurate pricing for electrical components and materials.",
-      techStack: ["Next.js", "Python", "Web Scraping", "APIs", "Database"],
+      overview: "End-to-end quoting cockpit built for European electrical contractors – from sourcing materials to generating client-ready offers. Electrical contractors still juggle spreadsheets, supplier portals, and PDFs to build a single quote, losing margin visibility and response time. FuseQuote bundles these workflows into a single application so teams can collaborate, quote faster, and protect profitability.",
+      techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
       keyContributions: [
-        "Architected real-time web scraping system processing 1000+ product queries daily",
-        "Built responsive React dashboard with advanced filtering and search capabilities",
-        "Implemented automated price tracking with alerts for significant price changes",
-        "Deployed scalable backend infrastructure handling concurrent scraping requests"
+        "Built authenticated shell with responsive sidebar, global search, and contextual help system",
+        "Implemented Supabase-backed lead capture and waitlist management with email subscriptions",
+        "Developed materials catalog with category filters, fuzzy search, and price comparison features",
+        "Created quote builder with client info, materials, labour, margin analysis, and PDF preview",
+        "Integrated Fuse.js-powered global search service for cross-surface lookup"
       ],
-      impact: "Reduced quote generation time from hours to minutes, enabling contractors to respond to opportunities 10x faster and increase bid conversion rates.",
+      impact: "Transforms how European electrical contractors source materials and generate professional offers, eliminating spreadsheet workflows and enabling real-time collaboration across sales, operations, and purchasing teams.",
       links: {
-        live: "https://electro-quote-pro-v2.vercel.app/"
+        live: "https://www.fusequote.com/"
       }
     },
     cicd: {
@@ -581,7 +582,10 @@ function initializeProjectModals() {
         "Analyzed real-world case studies from multiple software projects",
         "Published findings in academic conference proceedings"
       ],
-      impact: "Contributing to software engineering methodology, providing practitioners with systematic approaches to manage architectural uncertainty in complex systems."
+      impact: "Contributing to software engineering methodology, providing practitioners with systematic approaches to manage architectural uncertainty in complex systems.",
+      links: {
+        live: "https://dl.acm.org/doi/10.1145/3698322.3698333"
+      }
     },
     kardashev: {
       title: "Kardashev",
@@ -615,6 +619,25 @@ function initializeProjectModals() {
       impact: "Showcases AI/computer vision capabilities and mobile development expertise, demonstrating ability to create consumer-facing applications with complex underlying AI technology.",
       links: {
         github: "https://github.com/AntonioCoppe/rubiks-vision"
+      }
+    },
+    systemdesign: {
+      title: "System Design Sandbox",
+      category: "Full-Stack Development",
+      status: "Production",
+      overview: "Interactive system design playground where users can drag, connect, and simulate realistic architectures. Built to solve the problem of system design being abstract and hard to practice without real feedback loops. Features drag-and-design interface with components like Web, CDN, API Gateway, Service, Redis, Postgres, S3, Kafka, and Load Balancer.",
+      techStack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Vitest", "Framer Motion"],
+      keyContributions: [
+        "Built visual editor with zoomable/pannable infinite grid and component connections",
+        "Implemented scenario-driven design with RPS and latency SLO validation",
+        "Created fast simulation engine with bottleneck detection and latency modeling",
+        "Developed shareable design links with compressed URL encoding",
+        "Added deterministic chaos mode with seeded RNG for reproducible testing"
+      ],
+      impact: "Provides hands-on learning platform for system design concepts, enabling developers to practice with real-world scenarios like URL shorteners, rate limiters, and CDN designs through interactive simulation.",
+      links: {
+        live: "https://system-design-sandbox.vercel.app/",
+        github: "https://github.com/AntonioCoppe/system-design-sandbox"
       }
     }
   };
@@ -662,14 +685,35 @@ function initializeProjectModals() {
           <div class="project-modal-section">
             <h3>Links</h3>
             <div class="project-modal-links">
-              ${project.links.live ? `<a href="${project.links.live}" target="_blank" class="project-modal-link live">
-                <ion-icon name="globe-outline"></ion-icon>
-                View Live
-              </a>` : ''}
-              ${project.links.github ? `<a href="${project.links.github}" target="_blank" class="project-modal-link github">
-                <ion-icon name="logo-github"></ion-icon>
-                GitHub
-              </a>` : ''}
+              ${(() => {
+                const isResearch = (project.category || '').toLowerCase().includes('research');
+                const links = [];
+                if (project.links.live) {
+                  links.push(`
+                    <a href="${project.links.live}" target="_blank" class="project-modal-link live">
+                      <ion-icon name="${isResearch ? 'document-text-outline' : 'globe-outline'}"></ion-icon>
+                      ${isResearch ? 'View Publication' : 'View Live'}
+                    </a>
+                  `);
+                }
+                if (project.links.publication) {
+                  links.push(`
+                    <a href="${project.links.publication}" target="_blank" class="project-modal-link publication">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                      View Publication
+                    </a>
+                  `);
+                }
+                if (project.links.github) {
+                  links.push(`
+                    <a href="${project.links.github}" target="_blank" class="project-modal-link github">
+                      <ion-icon name="logo-github"></ion-icon>
+                      GitHub
+                    </a>
+                  `);
+                }
+                return links.join('');
+              })()}
             </div>
           </div>
         ` : ''}

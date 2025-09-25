@@ -449,7 +449,7 @@
             <ul class="education-highlights">
               <li class="highlight-item">
                 <ion-icon name="document-text-outline"></ion-icon>
-                <span>Published research: "Patterns for Using Hypothesis Engineering to Manage Architectural Uncertainties"</span>
+                <span>Published research: <a href="https://dl.acm.org/doi/10.1145/3698322.3698333" target="_blank" style="color: inherit; text-decoration: underline;">"Patterns for Using Hypothesis Engineering to Manage Architectural Uncertainties"</a></span>
               </li>
               <li class="highlight-item">
                 <ion-icon name="library-outline"></ion-icon>
@@ -626,11 +626,11 @@
         <section class="projects-section">
           <div class="project-grid" id="portfolio-items">
             
-            <!-- ElectroQuote Pro V2 - Full-Stack Production -->
+            <!-- FuseQuote - Full-Stack Production -->
             <div class="project-card active" data-filter-item data-category="full-stack" data-project="electroquote">
               <div class="project-card-inner">
                 <div class="project-image">
-                  <img src="./attached_assets/Screenshot 2025-08-01 at 10.45.06_1754059509711.png" alt="ElectroQuote Pro V2 Dashboard" loading="lazy">
+                  <img src="./attached_assets/Screenshot 2025-09-25 at 09.33.58.png" alt="FuseQuote Dashboard" loading="lazy">
                   <div class="project-overlay">
                     <button class="project-view-btn" data-project-modal="electroquote">
                       <ion-icon name="eye-outline"></ion-icon>
@@ -641,10 +641,10 @@
                 </div>
                 <div class="project-content">
                   <div class="project-header">
-                    <h3 class="project-title">ElectroQuote Pro V2</h3>
+                    <h3 class="project-title">FuseQuote</h3>
                     <span class="project-category-tag full-stack">Full-Stack</span>
                   </div>
-                  <p class="project-impact">Real-time electrical pricing platform with web scraping — delivering instant quotes to contractors</p>
+                  <p class="project-impact">End-to-end quoting cockpit built for European electrical contractors – from sourcing materials to generating client-ready offers</p>
                   <div class="project-tech-stack">
                     <span class="tech-badge">Next.js</span>
                     <span class="tech-badge">Python</span>
@@ -847,6 +847,34 @@
                     <span class="tech-badge">Flutter</span>
                     <span class="tech-badge">Computer Vision</span>
                     <span class="tech-badge">AI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- System Design Sandbox - Full-Stack -->
+            <div class="project-card active" data-filter-item data-category="full-stack" data-project="systemdesign">
+              <div class="project-card-inner">
+                <div class="project-image">
+                  <img src="./attached_assets/system-design-asset.png" alt="System Design Sandbox" loading="lazy">
+                  <div class="project-overlay">
+                    <button class="project-view-btn" data-project-modal="systemdesign">
+                      <ion-icon name="eye-outline"></ion-icon>
+                      View Case Study
+                    </button>
+                  </div>
+                  <div class="project-status-badge production">Production</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3 class="project-title">System Design Sandbox</h3>
+                    <span class="project-category-tag full-stack">Full-Stack</span>
+                  </div>
+                  <p class="project-impact">Interactive system design playground — drag, connect, and simulate realistic architectures with real-world scenarios</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">React</span>
                   </div>
                 </div>
               </div>
@@ -1102,12 +1130,12 @@ for (int i = 0; i < entities.Length; i++) {
             </li>
 
             <li class="blog-post-item" data-category="projects">
-              <a href="https://github.com/AntonioCoppe/notion-template-shop" target="_blank">
+              <a href="https://www.fusequote.com/" target="_blank">
                 <figure class="blog-banner-box">
                   <div class="project-screenshot">
                     <div class="screenshot-header">
-                      <span class="project-name">ElectroQuote Pro</span>
-                      <span class="tech-stack">Next.js + Python</span>
+                      <span class="project-name">FuseQuote</span>
+                      <span class="tech-stack">Next.js + TypeScript</span>
                     </div>
                     <div class="screenshot-content">
                       <div class="ui-element">🔍 Real-time Search</div>
@@ -1122,14 +1150,48 @@ for (int i = 0; i < entities.Length; i++) {
                     <span class="dot"></span>
                     <time datetime="2024-12-15">Dec 15, 2024</time>
                   </div>
-                  <h3 class="h3 blog-item-title">ElectroQuote Pro: Comparing Live Prices Across Multiple Vendors</h3>
+                  <h3 class="h3 blog-item-title">FuseQuote: End-to-End Quoting Platform for Electrical Contractors</h3>
                   <p class="blog-text">
-                    Full-stack marketplace with web scraping, real-time price comparison, and vendor management. Features Next.js frontend with Python backend processing.
+                    Modern quoting cockpit that transforms how European electrical contractors source materials and generate professional offers. Built with Next.js, Supabase, and real-time supplier integrations.
                   </p>
                   <div class="blog-tags">
                     <span class="tag">Next.js</span>
                     <span class="tag">Python</span>
                     <span class="tag">Web Scraping</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item" data-category="projects">
+              <a href="https://system-design-sandbox.vercel.app/" target="_blank">
+                <figure class="blog-banner-box">
+                  <div class="project-screenshot">
+                    <div class="screenshot-header">
+                      <span class="project-name">System Design Sandbox</span>
+                      <span class="tech-stack">Next.js + TypeScript</span>
+                    </div>
+                    <div class="screenshot-content">
+                      <div class="ui-element">🎯 Scenario-Based Learning</div>
+                      <div class="ui-element">🔗 Visual Architecture Design</div>
+                      <div class="ui-element">⚡ Real-Time Simulation</div>
+                    </div>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category projects">Projects</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-12-20">Dec 20, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">System Design Sandbox: Learn System Design Through Interactive Simulation</h3>
+                  <p class="blog-text">
+                    Interactive playground where developers can drag, connect, and simulate realistic system architectures. Features real-world scenarios like URL shorteners, rate limiters, and CDN designs with performance validation and bottleneck detection.
+                  </p>
+                  <div class="blog-tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">System Design</span>
                   </div>
                 </div>
               </a>
@@ -1175,7 +1237,7 @@ for (int i = 0; i < entities.Length; i++) {
             </li>
 
             <li class="blog-post-item" data-category="research">
-              <a href="#" data-blog-post="research-publication">
+              <a href="https://dl.acm.org/doi/10.1145/3698322.3698333" target="_blank" data-blog-post="research-publication">
                 <figure class="blog-banner-box">
                   <div class="research-paper">
                     <div class="paper-header">

@@ -1,6 +1,6 @@
 // Service Worker for Antonio Coppe Portfolio
-const CACHE_NAME = 'antonio-portfolio-v1';
-const STATIC_CACHE = 'antonio-static-v1';
+const CACHE_NAME = 'antonio-portfolio-v2';
+const STATIC_CACHE = 'antonio-static-v2';
 
 // Static assets to cache immediately
 const STATIC_ASSETS = [

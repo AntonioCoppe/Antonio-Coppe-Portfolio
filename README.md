@@ -22,9 +22,10 @@ Antonio Coppe is a Software Engineer with 2+ years of experience specializing in
 ## Projects Highlighted
 
 - **Notion Template Shop**: Web development project
+- **System Design Sandbox**: Interactive system design playground
 - **CI/CD Pipeline System**: DevOps infrastructure
 - **Riva dei Coz Booking Platform**: Full-stack booking application
-- **ElectroQuotePro V2**: Electrical project quoting platform
+- **FuseQuote**: End-to-end quoting platform for European electrical contractors
 
 ## Technologies Used
 
