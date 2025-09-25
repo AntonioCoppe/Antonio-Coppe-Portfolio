@@ -1,6 +1,7 @@
 // Service Worker for Antonio Coppe Portfolio
-const CACHE_NAME = 'antonio-portfolio-v2';
-const STATIC_CACHE = 'antonio-static-v2';
+const CACHE_VERSION = 'v3';
+const CACHE_NAME = `antonio-portfolio-${CACHE_VERSION}`;
+const STATIC_CACHE = `antonio-static-${CACHE_VERSION}`;
 
 // Static assets to cache immediately
 const STATIC_ASSETS = [
@@ -8,7 +9,7 @@ const STATIC_ASSETS = [
   '/index.html',
   '/assets/css/style.css',
   '/assets/css/theme.css',
-  '/assets/js/script.js',
+  // JS is handled with network-first; do not pre-cache versioned JS to avoid staleness
   '/assets/icons/icons-sprite.svg'
 ];
 
@@ -74,10 +75,9 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Static assets (CSS, JS, Images, Fonts, SVGs) - Cache First
+  // Static assets (CSS, Images, Fonts, SVGs) - Cache First
   if (
     event.request.url.includes('.css') ||
-    event.request.url.includes('.js') ||
     event.request.url.includes('.png') ||
     event.request.url.includes('.jpg') ||
     event.request.url.includes('.svg') ||
@@ -101,6 +101,24 @@ self.addEventListener('fetch', event => {
             return response;
           });
         })
+    );
+    return;
+  }
+
+  // JavaScript - Network First to avoid stale logic
+  if (event.request.url.includes('.js')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(STATIC_CACHE).then(cache => {
+              cache.put(event.request, responseClone);
+            });
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
     );
     return;
   }
