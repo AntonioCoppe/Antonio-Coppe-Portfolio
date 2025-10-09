@@ -636,8 +636,7 @@ function initializeProjectModals() {
       ],
       impact: "Provides hands-on learning platform for system design concepts, enabling developers to practice with real-world scenarios like URL shorteners, rate limiters, and CDN designs through interactive simulation.",
       links: {
-        live: "https://system-design-sandbox.vercel.app/",
-        github: "https://github.com/AntonioCoppe/system-design-sandbox"
+        live: "https://www.systemdesignsandbox.com/"
       }
     }
   };
