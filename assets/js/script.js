@@ -638,6 +638,24 @@ function initializeProjectModals() {
       links: {
         live: "https://www.systemdesignsandbox.com/"
       }
+    },
+    grantnavigator: {
+      title: "Grant Navigator",
+      category: "Full-Stack Development",
+      status: "Beta",
+      overview: "AI co-pilot that helps Italian SMEs, consultants, and innovation managers discover, qualify, and act on public funding opportunities without spending days on manual research. Solves fragmented information across regional portals, PDF bulletins, and agency newsletters with inconsistent structures.",
+      techStack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Supabase", "OpenAI", "shadcn/ui"],
+      keyContributions: [
+        "Built guided onboarding flow capturing company essentials (sector, region, priorities) in minutes",
+        "Implemented AI-powered grant matching with re-ranking against user profiles and criteria explanation",
+        "Developed automated draft checklists for document preparation and compliance",
+        "Created embedded mini-chat for ad-hoc queries against grant catalogue",
+        "Integrated curated RSS feeds, institutional portals, and manual data sources with normalization pipeline"
+      ],
+      impact: "Streamlines grant discovery workflow for SMEs by aggregating funding data, providing AI-driven classification, and surfacing shortlists with clear eligibility explanations, reducing manual research from days to minutes.",
+      links: {
+        live: "https://v0-grant-navigator-app.vercel.app/"
+      }
     }
   };
 
